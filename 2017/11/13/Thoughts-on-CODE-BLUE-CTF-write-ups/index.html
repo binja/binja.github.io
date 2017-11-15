@@ -113,7 +113,7 @@
 <p>Wow! It shows you can change the value of MMAP_THRESHOLD setting the environment variable “MALLOC_MMAP<em>THRESHOLD</em>“.<br>In this problem, you can set it using a stack buffer overflow.<br>So this is solvable!<br>What you have to do is:</p>
 <ol>
 <li>set “MALLOC_MMAP<em>THRESHOLD</em>=0” using a stack buffer overflow</li>
-<li>overwrite the hash map in an anonymous mapping using a heap buffer overflow</li>
+<li>overwrite the hash map of VTV in an anonymous mapping using a heap buffer overflow</li>
 <li>do ROP calling arbitrary addresses using vtable overwrite</li>
 </ol>
 <p>You need to be careful with mapping: the order of mapping in the memory space can change so easily. Even /etc/ld.so.cache can affect it. It is preferable that you prepare the enviroment close to the remote one using vagrant and the given files.</p>
